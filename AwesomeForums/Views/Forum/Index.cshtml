@@ -1,6 +1,9 @@
 ﻿@model AwesomeForums.Models.ForumData.ForumIndexModel
 
-<h1>Forums</h1>
+<div class="d-flex justify-content-between mb-3">
+    <h1>Forums</h1>
+    <a class="pt-3" asp-action="Create" asp-controller="Forum">Create new forum</a>
+</div>
 <table class="table table-hover" id="forumIndexTable">
     <tbody>
         @foreach (var forum in Model.ForumList)

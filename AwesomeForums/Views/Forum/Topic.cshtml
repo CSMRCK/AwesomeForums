@@ -27,6 +27,9 @@
                     <td>
                         @post.DatePosted
                     </td>
+                    <td>
+                        <a asp-controller="Post" asp-action="Edit" asp-route-id="@post.Id">Edit</a>
+                    </td>
                 </tr>
             }
         </tbody>

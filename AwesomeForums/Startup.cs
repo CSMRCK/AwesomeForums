@@ -1,19 +1,13 @@
 using AwesomeForums.Data;
-using AwesomeForums.Models;
 using AwesomeForums.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AwesomeForums
 {
@@ -34,9 +28,9 @@ namespace AwesomeForums
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                .AddEntityFrameworkStores<ApplicationDbContext>();
-           // services.AddIdentity<User, IdentityRole>()
-            //    .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.Configure<AuthMessageSenderOptions>(Configuration);
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddScoped<IForum, ForumService>();

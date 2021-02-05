@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace AwesomeForums.Services
 {
-    public class UploadService
+    public class AuthMessageSenderOptions
     {
+        public string SendGridUser { get; set; }
+        public string SendGridKey { get; set; }
     }
 }

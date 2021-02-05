@@ -170,6 +170,8 @@ C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\Razor\Views\Forum\Topic.cshtml.g.cs
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\Razor\Views\Post\Index.cshtml.g.cs
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\Razor\Views\Post\Create.cshtml.g.cs
-C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1\MailKit.dll
-C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1\MimeKit.dll
-C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1\SendGrid.dll
+C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
+C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
+C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\Razor\Views\Forum\Create.cshtml.g.cs
+C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\Razor\Views\Post\Edit.cshtml.g.cs

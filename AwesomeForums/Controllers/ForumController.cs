@@ -5,6 +5,8 @@ using AwesomeForums.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace AwesomeForums.Controllers
 {
@@ -35,6 +37,7 @@ namespace AwesomeForums.Controllers
 
             return View(model);
         }
+
         public IActionResult Topic(int id)
         {
             var forum = _forumServise.GetById(id);
@@ -56,6 +59,37 @@ namespace AwesomeForums.Controllers
 
             return View(model);
         }
+        public IActionResult Create()
+        {
+
+            var model = new NewForumModel();
+            String UserName = User.FindFirstValue(ClaimTypes.Name);
+
+            if (UserName != null)
+            {
+                return View(model);
+            }
+            else
+            {
+                ///Identity/Account/Register
+                return Redirect("~/Identity/Account/Register");
+            }
+            
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(NewForumModel model)
+        {
+            var forum = new Forum
+            {
+                Title = model.Title,
+                Description = model.Description,
+                Created = DateTime.Now,
+                Image = "@/images/forum/default.png"
+            };
+            await _forumServise.Create(forum);
+            return RedirectToAction("Index", "Forum");
+        }
+       
         private ForumListingModel BuildForumListing(Post post)
         {
             var forum = post.Forum;

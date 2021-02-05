@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddPost" method="post" id="AddPostForm">
+        <form asp-action="Edit" method="post" id="AddPostForm">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <input asp-for="ForumId" type="hidden"/>
@@ -24,8 +24,8 @@
                 <span asp-validation-for="AuthorName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ForumImageUrl" type="hidden" class="control-label"></label>
-                <input asp-for="ForumImageUrl" type="hidden"class="form-control" />
+                <label asp-for="ForumImageUrl" class="control-label"></label>
+                <input asp-for="ForumImageUrl" class="form-control" />
                 <span asp-validation-for="ForumImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">

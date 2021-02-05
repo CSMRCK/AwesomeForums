@@ -1,4 +1,6 @@
-﻿namespace AwesomeForums.Models.PostData
+﻿using System;
+
+namespace AwesomeForums.Models.PostData
 {
     public class NewPostModel
     {
@@ -8,5 +10,6 @@
         public string ForumImageUrl { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
+        public DateTime Created { get; set; }
     }
 }

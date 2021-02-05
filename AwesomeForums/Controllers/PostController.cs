@@ -4,6 +4,7 @@ using AwesomeForums.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace AwesomeForums.Controllers
@@ -29,8 +30,17 @@ namespace AwesomeForums.Controllers
                 ForumImageUrl = forum.Image,
                 AuthorName = User.Identity.Name
             };
+            String UserName = User.FindFirstValue(ClaimTypes.Name);
 
-            return View(model);
+            if (UserName != null)
+            {
+                return View(model);
+            }
+            else
+            {
+                ///Identity/Account/Register
+                return Redirect("~/Identity/Account/Register");
+            }
         }
         [HttpPost]
         public async Task<IActionResult> AddPost(NewPostModel model)
@@ -55,13 +65,35 @@ namespace AwesomeForums.Controllers
                 Forum = forum
             };
         }
+        public async Task<IActionResult> Edit(int id)
+        {
+            var post = _postService.GetById(id);
+            var model = new NewPostModel
+            {
+                Title = post.Title,
+                Content = post.Content,
+                Created = post.Created,
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id,NewPostModel model)
+        {
+            var newContent = model.Content;
+            var post = _postService.GetById(id);
+            int iz = post.Id;
+
+            await _postService.EditPostContent(iz, newContent);
+
+            return Content("Data has been updated!");
+        }
 
         public IActionResult Index(int id)
         {
             var post = _postService.GetById(id);
             var model = new PostIndexModel
             {
-                Id=post.Id,
+                Id = post.Id,
                 Title = post.Title,
                 AuthorId = post.User.Id,
                 AuthorName = post.User.UserName,
