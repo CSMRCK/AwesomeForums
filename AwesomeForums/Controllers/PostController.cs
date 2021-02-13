@@ -74,6 +74,7 @@ namespace AwesomeForums.Controllers
                 Content = post.Content,
                 Created = post.Created,
             };
+
             return View(model);
         }
         [HttpPost]
