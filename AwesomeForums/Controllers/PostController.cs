@@ -46,9 +46,9 @@ namespace AwesomeForums.Controllers
         public async Task<IActionResult> AddPost(NewPostModel model)
         {
             var userId = _userManager.GetUserId(User);
-            var user = _userManager.FindByIdAsync(userId).Result;
+            var user = await _userManager.FindByIdAsync(userId);
             var post = BuildPost(model, user);
-            _postService.Add(post).Wait();
+            await _postService.Add(post);
 
             return RedirectToAction("Index", "Post", new { id = post.Id });
         }
@@ -86,7 +86,7 @@ namespace AwesomeForums.Controllers
 
             await _postService.EditPostContent(iz, newContent);
 
-            return Content("Data has been updated!");
+            return RedirectToAction("Index", "Post", new { id = post.Id });
         }
 
         public IActionResult Index(int id)
