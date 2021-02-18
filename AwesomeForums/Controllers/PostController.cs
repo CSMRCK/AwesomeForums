@@ -65,6 +65,7 @@ namespace AwesomeForums.Controllers
                 Forum = forum
             };
         }
+
         public async Task<IActionResult> Edit(int id)
         {
             var post = _postService.GetById(id);

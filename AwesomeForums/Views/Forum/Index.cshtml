@@ -2,22 +2,18 @@
 
 <div class="d-flex justify-content-between mb-3">
     <h1>Forums</h1>
-    <a class="pt-3" asp-action="Create" asp-controller="Forum">Create new forum</a>
+    <p class="btn btn-info"><a  asp-action="Create" asp-controller="Forum" class="text-light text-decoration-none myLink">Create new forum</a></p>
 </div>
-<table class="table table-hover" id="forumIndexTable">
-    <tbody>
-        @foreach (var forum in Model.ForumList)
-        {
-            <tr>
-                <td>
-                    <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id">
-                        @forum.Name
-                    </a>
-                </td>
-                <td>
-                    @forum.Description
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+@foreach (var forum in Model.ForumList)
+{
+    <div class="card mb-4 shadow-sm bg-light">
+        <div class="p-3 form-inline d-flex justify-content-between">
+            <div>
+                <a asp-controller="Forum" asp-action="Topic" asp-route-id="@forum.Id"><h5 class="card-title">@forum.Name</h5></a>
+                <p class="card-text">@forum.Description</p>
+            </div>
+        </div>
+    </div>
+}
+

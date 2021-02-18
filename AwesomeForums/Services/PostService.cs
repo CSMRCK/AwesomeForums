@@ -22,9 +22,12 @@ namespace AwesomeForums.Services
             await _context.SaveChangesAsync();
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var post = GetById(id);
+            _context.Remove(post);
+
+            await _context.SaveChangesAsync();
         }
 
         public async Task EditPostContent(int id, string newContent)

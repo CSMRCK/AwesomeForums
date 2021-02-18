@@ -86,8 +86,21 @@ namespace AwesomeForums.Controllers
                 Created = DateTime.Now,
                 Image = "@/images/forum/default.png"
             };
-            await _forumServise.Create(forum);
-            return RedirectToAction("Index", "Forum");
+            if (string.IsNullOrEmpty(forum.Title))
+            {
+                ModelState.AddModelError("Title", "Please enter the title");
+            }
+            if (string.IsNullOrEmpty(forum.Description))
+            {
+                ModelState.AddModelError("Description", "Description is incorrect");
+            }
+
+            if (ModelState.IsValid)
+            {
+                await _forumServise.Create(forum);
+                return RedirectToAction("Index", "Forum");
+            }
+            return View(model);
         }
        
         private ForumListingModel BuildForumListing(Post post)

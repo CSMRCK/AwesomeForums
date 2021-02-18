@@ -132,7 +132,6 @@ C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\AwesomeForums.csprojAssemblyReference.cache
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\AwesomeForums.AssemblyInfoInputs.cache
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\AwesomeForums.AssemblyInfo.cs
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\AwesomeForums.csproj.CoreCompileInputs.cache
@@ -175,3 +174,4 @@ C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\Razor\Views\Forum\Create.cshtml.g.cs
 C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\obj\Debug\netcoreapp3.1\Razor\Views\Post\Edit.cshtml.g.cs
+C:\Users\CSMRCK\source\repos\AwesomeForums\AwesomeForums\bin\Debug\netcoreapp3.1\Services\secrets.json
